@@ -30,6 +30,8 @@ fritar() // cocinar la milanesa
   p(sem_mutex1)
   p(sem_fritar)
   v(sem_mutex1)
+
+cortarVerduras() // cortar cebolla morada, lechuga, tomate, pepino
 ```
 
 ## Dificultades
