@@ -148,11 +148,11 @@ void* fritar (void *data)
 
 void* cortarExtras(void *data)
 {
-	char *accion = "cortarExtras";	//creo el nombre de la accion de la funcion
-	struct parametro *mydata = data; 	//creo el puntero para pasarle la referencia de memoria (data) del struct pasado por parametro (la cual es un puntero).
-	imprimirAccion(mydata,accion); 	//llamo a la funcion imprimir le paso el struct y la accion de la funcion
-	usleep( 50000 );	//llamo a la funcion imprimir le paso el struct y la accion de la funcion
-    pthread_exit(NULL);
+   char *accion = "cortarExtras";	//creo el nombre de la accion de la funcion
+   struct parametro *mydata = data; 	//creo el puntero para pasarle la referencia de memoria (data) del struct pasado por parametro (la cual es un puntero).
+   imprimirAccion(mydata,accion); 	//llamo a la funcion imprimir le paso el struct y la accion de la funcion
+   usleep( 50000 );	//llamo a la funcion imprimir le paso el struct y la accion de la funcion
+   pthread_exit(NULL);
 }
 
 void* ejecutarReceta(void *i)
@@ -202,11 +202,11 @@ void* ejecutarReceta(void *i)
     strcpy(pthread_data->pasos_param[1].ingredientes[1], "perejil");
     strcpy(pthread_data->pasos_param[1].ingredientes[2], "huevo");
 	
-	strcpy(pthread_data->pasos_param[5].accion, "cortarExtras");
-	strcpy(pthread_data->pasos_param[5].ingredientes[0], "lechuga");
-	strcpy(pthread_data->pasos_param[5].ingredientes[1], "tomate");
-	strcpy(pthread_data->pasos_param[5].ingredientes[2], "pepino");
-	strcpy(pthread_data->pasos_param[5].ingredientes[3], "cebolla morada");
+    strcpy(pthread_data->pasos_param[5].accion, "cortarExtras");
+    strcpy(pthread_data->pasos_param[5].ingredientes[0], "lechuga");
+    strcpy(pthread_data->pasos_param[5].ingredientes[1], "tomate");
+    strcpy(pthread_data->pasos_param[5].ingredientes[2], "pepino");
+    strcpy(pthread_data->pasos_param[5].ingredientes[3], "cebolla morada");
 
     //inicializo los semaforos
     sem_init(&(pthread_data->semaforos_param.sem_mezclar),0,0);
@@ -255,7 +255,7 @@ void* ejecutarReceta(void *i)
     pthread_join (p4,NULL);
     pthread_join (p5,NULL);
     pthread_join (p6,NULL);
-	pthread_join (p7,NULL);
+    pthread_join (p7,NULL);
 
     //valido que el hilo se alla creado bien
     if (rc)
